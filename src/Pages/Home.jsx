@@ -22,21 +22,21 @@ const Home = () => {
       setIsLoading(false)
     })
   }, []);
-  
-  
-  
-  // ----------- Input Filter -----------
-  const [query,setQuery]=useState("");
-  const handleInputChange=(event)=>{
-        setQuery(event.target.value)
-        // console.log(event.target.value);
-    }
 
-    //------------filter by job title-----
-    const filteredItems = jobs.filter(
-      (job) => job.jobTitle.toLowerCase().indexOf(query.toLowerCase()) !== -1
-    );
-    // console.log(filteredItems);
+
+
+  // ----------- Input Filter -----------
+  const [query, setQuery] = useState("");
+  const handleInputChange = (event) => {
+    setQuery(event.target.value)
+    // console.log(event.target.value);
+  }
+
+  //------------filter by job title-----
+  const filteredItems = jobs.filter(
+    (job) => job.jobTitle.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  );
+  // console.log(filteredItems);
 
   // ----------- Radio Filtering -----------
   const handleChange = (event) => {
@@ -96,7 +96,7 @@ const Home = () => {
           postingDate === selected ||
           parseInt(maxPrice) <= parseInt(selected) ||
           salaryType.toLowerCase() === selected.toLowerCase() ||
-         experienceLevel.toLowerCase() === selected.toLowerCase() ||
+          experienceLevel.toLowerCase() === selected.toLowerCase() ||
           employmentType.toLowerCase() === selected.toLowerCase()
       );
       console.log(filteredJobs);
@@ -113,18 +113,18 @@ const Home = () => {
 
   return (
     <div>
-      <Banner query={query} handleInputChange={handleInputChange}/>
+      <Banner query={query} handleInputChange={handleInputChange} />
       {/* main content */}
       <div className="bg-[#FAFAFA] md:grid grid-cols-4 gap-8 lg:px-24 px-4 py-12">
         {/* left side */}
-      <div className="bg-white p-4 rounded">
-      <Sidebar handleChange={handleChange} handleClick={handleClick} />
+        <div className="bg-white p-4 rounded">
+          <Sidebar handleChange={handleChange} handleClick={handleClick} />
 
-      </div>
+        </div>
 
-      {/* job cards */}
-      <div className="col-span-2 bg-white p-4 rounded"> <Jobs result={result} />
-      {isLoading ? ( // Loading indicator
+        {/* job cards */}
+        <div className="col-span-2 bg-white p-4 rounded">
+          {isLoading ? ( // Loading indicator
             <p className="font-medium">Loading...</p>
           ) : result.length > 0 ? (
             <Jobs result={result} />
@@ -134,9 +134,9 @@ const Home = () => {
               <p>No data found</p>
             </>
           )}
-            {/* pagination block here */}
+          {/* pagination block here */}
 
-            {result.length > 0 ? (
+          {result.length > 0 ? (
             <div className="flex justify-center mt-4 space-x-8">
               <button
                 onClick={prevPage}
@@ -162,12 +162,12 @@ const Home = () => {
           ) : (
             ""
           )}
-      </div>
-    
+        </div>
 
-      {/* right side */}
-      <div className="bg-white p-4 rounded"><Newsletter /></div>
-      
+
+        {/* right side */}
+        <div className="bg-white p-4 rounded"><Newsletter /></div>
+
 
       </div>
     </div>
