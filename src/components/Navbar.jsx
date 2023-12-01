@@ -23,15 +23,15 @@ const Navbar = () => {
     <a href="/" className="flex items-center gap-2 text-2xl text-black">
      <svg
        xmlns="http://www.w3.org/2000/svg"
-       width="29"
-       height="30"
+       width="60"
+       height="60"
        viewBox="0 0 29 30"
        fill="none"
      >
        <circle
          cx="12.0143"
          cy="12.5143"
-         r="12.0143"
+         r="11.0143"
          fill="#3575E2"
          fillOpacity="0.4"
        />
